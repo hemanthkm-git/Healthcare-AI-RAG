@@ -32,6 +32,7 @@ def extract_text_from_pdf(file_path: str) -> list[dict]:
     for page_number, page in enumerate(reader.pages, start=1):
         pages.append(
             {
+                "document": path.name,
                 "page_number": page_number,
                 "text": page.extract_text() or "",
             }
